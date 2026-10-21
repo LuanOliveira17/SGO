@@ -1,0 +1,19 @@
+{
+  "name": "qualigest-sgo",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "preflight": "node scripts/preflight.js",
+    "check": "node --check server.js && node --check public/js/29-servidor.js && node --check scripts/backup.js && node --check scripts/backup-retention.js && node --check scripts/verify-backup.js && node --check scripts/preflight.js && node --check scripts/reset-admin.js && node --check lib/scope.js && node --check lib/mailer.js",
+    "test": "node --test tests/*.test.js",
+    "backup": "node scripts/backup.js",
+    "backup:daily": "node scripts/backup-retention.js",
+    "backup:verify": "node scripts/verify-backup.js",
+    "reset-admin": "node scripts/reset-admin.js"
+  }
+}
